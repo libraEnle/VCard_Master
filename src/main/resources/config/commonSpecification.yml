@@ -1,0 +1,7 @@
+specification-config:
+  configMap:
+  #实现JPA自定义查询，like字段配置说明(key：相应的PO类；list是自定义查询时like的字符串属性)
+    com.xhjk.core.interfaces.cardmanagement.vcard.DAOs.entitys.CardInfo:
+    #list是自定义查询时like的字符串属性
+      - cardNo
+      - cardSeq

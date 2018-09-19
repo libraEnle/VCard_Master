@@ -1,0 +1,32 @@
+spring:
+    datasource:
+      driver-class-name: oracle.jdbc.OracleDriver
+      url: ENC(1Ne9LAOgkTqBUW5kXaOHpjNp5N+NhFXUEbDmjucbVVgrNWoqJpEN5rfsXXKJFbT8I8YpkcNYbgw=)
+      #jdbc:oracle:thin:@10.4.161.34:1521:ORA11G
+      username: ENC(SGpig6PXWegDzmEoqCWk6g==)
+      #xhjk
+      password: ENC(ko/mL4UBUuMHlK2iBm7A5boKd1/SNJQp)
+      #1234554321
+      tomcat:
+        default-auto-commit: false
+        test-on-return: false
+        test-on-borrow: false
+        validation-query: SELECT 1 FROM DUAL
+        time-between-eviction-runs-millis: 300000
+        min-evictable-idle-time-millis: 1800000
+        initial-size: 30
+        max-active: 50
+        max-wait: 60000
+        min-idle: 30
+    jpa:
+      show-sql: true
+      database-platform: org.hibernate.dialect.Oracle10gDialect
+
+
+log:
+  path: D:\tmpLog\dev
+  level: debug
+
+jasypt:
+  encryptor:
+    password: 1UNHLGDDRAE3PQNHXAH6C5PA6U2XOONADP7JZNH0498RGT730N8IZ8SXTR0FMN3O

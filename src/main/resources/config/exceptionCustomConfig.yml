@@ -1,0 +1,9 @@
+exception-custom:
+#异常信息配置
+  exceptionMap:
+    LogSerialException:
+      0001: 无法查到相应的方法
+    SpecificationException:
+      0001: Specification 查询对象{0}配置不完整，导致查询创建失败，请查看Specification配置文件
+    CardCtrlException:
+      0002: 添加卡信息失败，请查看相关后台流程

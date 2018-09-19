@@ -1,0 +1,30 @@
+due-before-work-process:
+#核心业务操作前，非业务操作流程配置
+  streamMap:
+  #业务号
+    1019:
+    #顺序号
+      1:
+      #核心业务请求类型 controller中Request对象
+        from: com.xhjk.core.interfaces.cardmanagement.vcard.DAOs.entitys.CardInfo
+      #非核心业务请求类型
+        to: com.xhjk.core.interfaces.cardmanagement.vcard.DAOs.entitys.SystemTrace
+      #转化方法(在转化后类型中定义)
+        method: transferFrom
+      #是否需要，核心业务实施前后均操作同一个非核心业务对象
+        level: record
+      #非核心业务操作服务
+        processor: com.xhjk.core.interfaces.cardmanagement.vcard.services.impl.SystemTraceServiceImpl
+
+ #核心业务操作结束后，非业务操作流程配置
+  streamEndMap:
+  #非核心业务请求类型，SimpleName
+    SystemTrace:
+    #非核心业务操作服务
+      processor: com.xhjk.core.interfaces.cardmanagement.vcard.services.impl.SystemTraceServiceImpl
+      #非核心业务请求类型
+      param: com.xhjk.core.interfaces.cardmanagement.vcard.DAOs.entitys.SystemTrace
+      #核心业务成功完成后，操作非核心业务方法（定义于业务Service中）
+      returnMethod: updateResult
+      #核心业务成功失败后，操作非核心业务方法（定义于业务Service中）
+      throwMethod: updateResultWithError

@@ -1,0 +1,10 @@
+debug: false
+
+spring:
+  profiles:
+    active: dev
+
+
+
+server:
+  port: 9018
